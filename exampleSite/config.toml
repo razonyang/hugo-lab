@@ -6,4 +6,5 @@ theme = 'github.com/razonyang/hugo-lab'
 proxy="https://goproxy.cn"
 
 [params]
-heading_color="red"
+heading_color="brown"
+slink_color="indigo"

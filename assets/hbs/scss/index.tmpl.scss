@@ -1,0 +1,6 @@
+@use 'heading' with (
+    $color: {{ default "blue" .Site.Params.heading_color }},
+);
+@use 'link' with (
+    $color: {{ default "black" .Site.Params.link_color }},
+);

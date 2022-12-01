@@ -1,14 +1,16 @@
 <html>
     <head>
-        {{ $varsTmpl := resources.Get "hbs/scss/vars.tmpl.scss" }}
-        {{ $vars := $varsTmpl | resources.ExecuteAsTemplate "hbs/scss/_vars.scss" . }}
-        {{ $styles := slice $vars (resources.Get "hbs/scss/main.scss") }}
-        {{ $style := $styles | resources.Concat "css/hbs.css" | toCSS (dict
+        {{ $tmpl := resources.Get "hbs/scss/index.tmpl.scss" }}
+        {{ $style := $tmpl | resources.ExecuteAsTemplate "hbs/scss/index.scss" . }}
+        {{ $style := $style | toCSS (dict
             "transpiler" "dartsass"
         ) }}
         <link href="{{ $style.Permalink }}" rel="stylesheet">
     </head>
     <body>
         <h1 class="heading">Hugo Lab</h1>
+        <p>
+            <a href="https://github.com/razonyang/hugo-lab">Link</a>
+        </p>
     </body>
 </html>
