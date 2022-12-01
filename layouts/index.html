@@ -1,7 +1,12 @@
 <html>
     <head>
-        {{ $varsTmpl := resources.Get "hbs/scss/vars.tmpl.scss" }}
-        {{ $vars := $varsTmpl | resources.ExecuteAsTemplate "_vars.scss" . }}
+        {{ $vars := resources.Get "hbs/scss/vars.tmpl.scss" }}
+        {{ $vars = $vars | resources.ExecuteAsTemplate "vars.scss" . }}
+        {{ $reloaded := resources.Get "vars.scss" }}
+        {{ if ne $vars $reloaded }}
+            {{ errorf "%s, %#v != %#v.\n" "these should be the same" $vars $reloaded }}
+        {{ end }}
+
         {{ $styles := resources.Get "hbs/scss/main.scss" }}
         {{ $style := $styles | toCSS (dict
             "transpiler" "dartsass"
