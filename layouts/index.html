@@ -1,5 +1,8 @@
 <html>
     <head>
+        {{ $js := resources.Get "js/index.ts" }}
+        {{ $js = $js | js.Build }}
+        <script src="{{ $js.Permalink }}"></script>
     </head>
     <body>
     </body>
