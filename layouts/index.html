@@ -1,6 +1,13 @@
 <html>
     <head>
+        {{- range resources.Match "tingle.js/*" }}
+          {{- warnf "%v" .Name }}
+        {{- end }}
+        {{ $css := resources.Get "main.scss" }}
+        {{ $css = $css | toCSS (dict "includePaths" (slice "node_modules") "transpiler" "dartsass") }}
+        <link href="{{ $css.RelPermalink }}" rel="stylesheet">
     </head>
     <body>
+        <h1 class="text-red">RED HEADING</h1>
     </body>
 </html>
