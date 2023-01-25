@@ -1,0 +1,15 @@
+{
+  "module": {
+    "hugoVersion": {
+      "extended": true,
+      "min": "0.99.0",
+      "max": "0.111.1"
+    },
+    "imports": [
+      {
+        "path": "github.com/gohugoio/hugo-mod-bootstrap-scss/v5",
+        "proxy": "https://goproxy.cn"
+      }
+    ]
+  }
+}

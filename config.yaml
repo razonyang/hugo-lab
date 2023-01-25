@@ -1,8 +1,0 @@
-module:
-  hugoVersion:
-    extended: false
-    min: 0.100.0
-    max: 0.110.1
-  imports:
-    - path: github.com/gohugoio/hugo-mod-bootstrap-scss/v5
-      proxy: 'https://goproxy.cn'
