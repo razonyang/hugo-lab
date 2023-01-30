@@ -1,0 +1,4 @@
+{{ warnf "%s" .Page.Resources }}
+{{ with .Page.Resources.GetMatch .Destination }}
+    <img src="{{ .RelPermalink }}" />
+{{ end }}
