@@ -3,8 +3,10 @@ on:
     - cron: '*/5 * * * *'
 
 jobs:
-  type:
+  ctx:
     runs-on: ubuntu-latest
     steps:
       - name: Event Type
-        run: echo ${{ github.event.type }}
+        env:
+          GITHUB_CTX: ${{ toJson(github) }}
+        run: echo "$GITHUB_CTX"
