@@ -3,6 +3,7 @@
     </head>
     <body>
         <h1 class="heading">Hugo Lab</h1>
+        {{- warnf "%#v" .Site }}
         {{- warnf "baseURL: %s" .Site.BaseURL }}
     </body>
 </html>
