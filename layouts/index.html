@@ -1,14 +1,8 @@
 <html>
     <head>
-        {{ $varsTmpl := resources.Get "hbs/scss/vars.tmpl.scss" }}
-        {{ $vars := $varsTmpl | resources.ExecuteAsTemplate "_vars.scss" . }}
-        {{ $styles := resources.Get "hbs/scss/main.scss" }}
-        {{ $style := $styles | toCSS (dict
-            "transpiler" "dartsass"
-        ) }}
-        <link href="{{ $style.Permalink }}" rel="stylesheet">
     </head>
     <body>
         <h1 class="heading">Hugo Lab</h1>
+        {{- warnf "baseURL: %s" .Site.BaseURL }}
     </body>
 </html>
